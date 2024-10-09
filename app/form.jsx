@@ -1,3 +1,4 @@
+"use client"
 import { linkShortener } from "@/actions/link"
 import { useFormState } from "react-dom"
 
