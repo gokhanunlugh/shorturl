@@ -1,6 +1,7 @@
 "use server"
 
 import { makeid } from "@/utils/shorturl";
+import { defaultHeader } from "@/utils/supabase/header";
 
 export async function linkShortener(formData) {
   const longUrl = formData.get('url');
@@ -12,6 +13,14 @@ export async function linkShortener(formData) {
   const shortUrl = makeid(6)
   const response = await fetch("https://iblitesiugyvrzmeoqsf.supabase.co/rest/v1/", {
     method: "POST",
-    
+    headers: defaultHeader,
+    body: JSON.stringify({
+      short_url: shortUrl,
+      long_url: longUrl
+    })
   })
+
+  if(response.ok){
+    return {message: "Link başarıyla kısaltıldı."}
+  }
 }
