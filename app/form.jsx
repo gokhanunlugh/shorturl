@@ -5,7 +5,7 @@ import { useFormState } from "react-dom"
 
 export default function Form(){
 
-  const [state, action] = useFormState(linkShortener, {
+  const [state, shorten] = useFormState(linkShortener, {
     message: null,
     error: null
   })

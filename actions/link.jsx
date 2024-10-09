@@ -3,7 +3,7 @@
 import { makeid } from "@/utils/shorturl";
 import { defaultHeader } from "@/utils/supabase/header";
 
-export async function linkShortener(formData) {
+export async function linkShortener(prevState, formData) {
   const longUrl = formData.get('url');
   if (!longUrl) return { error: "Url alanı boş olamaz."}
 
@@ -11,7 +11,7 @@ export async function linkShortener(formData) {
   if(!regex.test(longUrl)) return { error: "Geçersiz bir url girdiniz" }
 
   const shortUrl = makeid(6)
-  const response = await fetch("https://iblitesiugyvrzmeoqsf.supabase.co/rest/v1/", {
+  const response = await fetch("https://iblitesiugyvrzmeoqsf.supabase.co/rest/v1/urls", {
     method: "POST",
     headers: defaultHeader,
     body: JSON.stringify({
