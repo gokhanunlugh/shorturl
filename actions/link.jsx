@@ -1,7 +1,7 @@
 "use server"
 
 import { makeid } from "@/utils/shorturl";
-import { defaultHeader } from "@/utils/supabase/header";
+import { defaultHeader } from "@/utils/header";
 
 export async function linkShortener(prevState, formData) {
   const longUrl = formData.get('url');
