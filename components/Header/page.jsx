@@ -1,14 +1,23 @@
+import { signOut } from "@/actions/auth";
+import { createClient } from "@/utils/supabase/server"
+import Link from "next/link";
 
+export default async function Header(){
+  const supabase = createClient();
+  const { data : { user }, error } = await supabase.auth.getUser();
 
-export default function Header(){
   return(
     <header>
-      <form action="">
-        <input type="email" name="email" />
-        <input type="password" name="pass" />
-        <button>Giriş</button>
-      </form>
-      <button>Üye Ol</button>
+      { user ? (
+                <>
+                    <span>Hello {user.email}</span>
+                    <form action={signOut}>
+                        <button>Çıkış Yap</button>
+                    </form>
+                </>
+            ) : (
+                <Link href="/login">Giriş Yap</Link>
+            ) }
     </header>
   )
 }
