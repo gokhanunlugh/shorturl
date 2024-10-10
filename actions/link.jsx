@@ -2,8 +2,11 @@
 
 import { makeid } from "@/utils/shorturl";
 import { defaultHeader } from "@/utils/header";
+import { createClient } from "@/utils/supabase/server";
 
 export async function linkShortener(prevState, formData) {
+  const supabase = createClient();
+  const { data: { user } } = await supabase.auth.getUser();
   const longUrl = formData.get('url');
   if (!longUrl) return { error: "Url alanı boş olamaz."}
 
@@ -16,7 +19,8 @@ export async function linkShortener(prevState, formData) {
     headers: defaultHeader,
     body: JSON.stringify({
       short_url: shortUrl,
-      long_url: longUrl
+      long_url: longUrl,
+      user_id: user ? user.id : null
     })
   })
 
