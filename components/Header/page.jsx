@@ -10,7 +10,7 @@ export default async function Header(){
     <header>
       { user ? (
                 <>
-                    <span>Hello {user.email}</span>
+                    <span>Merhaba {user.email}</span>
                     <form action={signOut}>
                         <button>Çıkış Yap</button>
                     </form>
