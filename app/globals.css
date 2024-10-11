@@ -29,11 +29,11 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background-color: aquamarine;
+  background-color: white;
 }
 
 .container {
-  max-width: 1440p;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 24px;
 }
@@ -42,16 +42,100 @@ header{
   display: flex;
   justify-content: end;
   align-items: center;
+  gap: 10px;
 
 }
 
 header span{
   font-size: 24px;
+  padding: 0;
 }
 
-header button {
+header a {
   border-radius: 10px;
   font-size: 14px;
-  background-color: aliceblue;
+  background-color: orange;
   border: none;
+  padding: 5px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: teal;
+}
+
+ul {
+  list-style: none;
+}
+
+.urlForm {
+  width: 370px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 30px;
+  background-color: blue;
+  border-radius: 50px;
+}
+
+form button {
+  border-radius: 15px;
+  border: none;
+  background-color: orange;
+  color: white;
+  padding: 5px;
+  display: block;
+}
+
+.fp {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.linkList {
+  display: flex;
+  justify-content: space-between;
+  width: 370px;
+  margin-bottom: 10px;
+}
+
+.linkList span {
+  text-overflow:clip;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 200px;
+
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  gap: 10px;
+  align-items: center;
+}
+
+header h1 {
+  display: flex;
+  font-size: 20px;
+  gap: 20px;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.userPage header {
+  justify-content: space-between;
 }

@@ -24,8 +24,8 @@ export default function Form() {
   }, [state])
 
   return (
-    <form ref={formRef} action={shorten}>
-      <input type="text" name="url" placehlder="Linki giriniz" />
+    <form className="urlForm" ref={formRef} action={shorten}>
+      <input type="text" name="url" placeholder="Linki giriniz" />
       <button>Linki Kısalt</button>
     </form>
   )

@@ -17,8 +17,10 @@ export default async function Home() {
   return (
     <>
     <Header />
-    <Form />
-    <ShortUrl urls={urls} user={user} />
+    <div className="fp">
+      <Form />
+      <ShortUrl urls={urls} user={user} />
+    </div>
     </>
   );
 }

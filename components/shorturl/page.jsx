@@ -19,8 +19,8 @@ export default function ShortUrl({urls, user}){
   return (
     <ul>
       {data.map(x=> (
-        <p key={x.id}>
-          <Link href={x.long_url}>{x.short_url}</Link> - {x.long_url}
+        <p className="linkList" key={x.id}>
+          <Link href={`/${x.short_url}`}>localhost:3000/{x.short_url}</Link>  <span>{x.long_url}</span>
         </p>
       ))}
     </ul>
