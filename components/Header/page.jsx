@@ -10,7 +10,7 @@ export default async function Header(){
     <header>
       { user ? (
                 <>
-                    <span>Merhaba {user.email}</span>
+                    <Link href={'/user'}><span>Merhaba {user.email}</span></Link>
                     <form action={signOut}>
                         <button>Çıkış Yap</button>
                     </form>
