@@ -1,6 +1,6 @@
 "use server"
 
-import { makeid } from "@/utils/shorturl";
+import { makeid } from "@/utils/shortUrl";
 import { defaultHeader } from "@/utils/header";
 import { createClient } from "@/utils/supabase/server";
 
