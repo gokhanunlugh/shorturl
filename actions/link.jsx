@@ -20,7 +20,8 @@ export async function linkShortener(prevState, formData) {
     body: JSON.stringify({
       short_url: shortUrl,
       long_url: longUrl,
-      user_id: user ? user.id : null
+      user_id: user ? user.id : null,
+      user_email: user ? user.email : null
     })
   })
 
