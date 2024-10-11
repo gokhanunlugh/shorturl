@@ -1,12 +1,24 @@
 import Header from "@/components/Header/page";
 import Form from "./form";
+import { createClient } from "@/utils/supabase/server";
+import ShortUrl from "@/components/shorturl/page";
 
 
-export default function Home() {
+
+export default async function Home() {
+
+  const supabase = createClient();
+  
+  const { data: { user } } = await supabase.auth.getUser();
+  
+  let { data: urls, error } = await supabase
+    .from('urls')
+    .select('*');
   return (
     <>
     <Header />
     <Form />
+    <ShortUrl urls={urls} user={user} />
     </>
   );
 }
