@@ -20,7 +20,7 @@ export default function ShortUrl({urls, user}){
     <ul>
       {data.map(x=> (
         <p className="linkList" key={x.id}>
-          <Link href={`/${x.short_url}`}>localhost:3000/{x.short_url}</Link>  <span>{x.long_url}</span>
+          <Link href={`/${x.short_url}`}>shorturl-six-hazel.vercel.app/{x.short_url}</Link>  <span>{x.long_url}</span>
         </p>
       ))}
     </ul>

@@ -38,7 +38,7 @@ export default async function UserData() {
         <div className="links">
           <div className="short">
             {shortLinks.map((x, i, key) => (
-              <p key={i}><Link key={key} href={x}>localhost:3000/{x}</Link></p>
+              <p key={i}><Link key={key} href={x}>https://shorturl-six-hazel.vercel.app/{x}</Link></p>
             ))}
           </div>
           <div className="long">

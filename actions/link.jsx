@@ -3,6 +3,7 @@
 import { makeid } from "@/utils/shortUrl";
 import { defaultHeader } from "@/utils/header";
 import { createClient } from "@/utils/supabase/server";
+import { redirect } from "next/navigation";
 
 export async function linkShortener(prevState, formData) {
   const supabase = createClient();
@@ -26,6 +27,7 @@ export async function linkShortener(prevState, formData) {
   })
 
   if(response.ok){
+    redirect('/')
     return {message: "Link başarıyla kısaltıldı."}
   }
 }
